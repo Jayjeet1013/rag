@@ -28,11 +28,11 @@ export default function Home() {
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const colors = {
-    background: "#e0f2f1", // Light green background for the chat box
-    assistant: "#00796b", // Darker green for assistant messages
-    user: "#004d40", // Even darker green for user messages
-    text: "#FFFFFF", // White text
-    button: "#004d40", // Button color
+    background: "#9900ff", // Darker background for a more modern look
+    assistant: "#4caf50", // Green color for assistant messages
+    user: "#2196f3", // Blue color for user messages
+    text: "#ffffff", // White text color for contrast
+    button: "#f50057", // Pink color for the send button
   };
 
   const sendMessage = async () => {
@@ -108,7 +108,7 @@ export default function Home() {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
-      bgcolor={"#ffffff"}
+      className="animated-background" // Apply the animation class here
     >
       <motion.div
         initial={{ scale: 0.95, opacity: 0 }}
@@ -126,12 +126,9 @@ export default function Home() {
             boxShadow: 3,
           }}
         >
-          <h1 style={{ color: colors.text, marginBottom: "10px" }}>
-            AI Rate My PRofessor
-          </h1>
-          <p style={{ color: colors.text }}>
-            Welcome to AI Rate My Professor! How can we assist you in finding
-            the best professors and classes for your academic journey today?
+      
+          <p className="font-semibold text-[20px] " style={{ color: colors.text }}>
+            Welcome to AI Rate My Professor! 
           </p>
         </Box>
         <Stack
@@ -226,6 +223,12 @@ export default function Home() {
               InputProps={{
                 style: {
                   fontSize: isMobile ? "0.9rem" : "1rem",
+                  color: colors.text, // Text color for the input
+                },
+              }}
+              InputLabelProps={{
+                style: {
+                  color: colors.text, // Text color for the label
                 },
               }}
             />
